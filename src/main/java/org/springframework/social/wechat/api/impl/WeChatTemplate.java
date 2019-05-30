@@ -1,6 +1,7 @@
 package org.springframework.social.wechat.api.impl;
 
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
+import org.springframework.social.oauth2.TokenStrategy;
 import org.springframework.social.wechat.api.UserOperations;
 import org.springframework.social.wechat.api.WeChat;
 
@@ -17,7 +18,7 @@ public class WeChatTemplate extends AbstractOAuth2ApiBinding implements WeChat {
     private UserOperations userOperations;
 
     public WeChatTemplate(String accessToken) {
-        super(accessToken);
+        super(accessToken, TokenStrategy.ACCESS_TOKEN_PARAMETER);
         initSubApis();
     }
 

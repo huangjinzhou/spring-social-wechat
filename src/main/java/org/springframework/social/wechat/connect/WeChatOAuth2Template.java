@@ -28,7 +28,7 @@ public class WeChatOAuth2Template extends OAuth2Template {
     /**
      * wechat application secret
      */
-    private String appSecrect;
+    private String appSecret;
 
     /**
      * url to exchange access token with WeChat using code
@@ -43,7 +43,7 @@ public class WeChatOAuth2Template extends OAuth2Template {
     public WeChatOAuth2Template(String clientId, String clientSecret, String authorizeUrl, String accessTokenUrl, String refreshTokenUrl) {
         super(clientId, clientSecret, authorizeUrl, accessTokenUrl);
         this.appId = clientId;
-        this.appSecrect = clientSecret;
+        this.appSecret = clientSecret;
         this.accessTokenUrl = accessTokenUrl;
         this.refreshTokenUrl = refreshTokenUrl;
     }
@@ -53,7 +53,7 @@ public class WeChatOAuth2Template extends OAuth2Template {
         StringBuilder accessTokenUrl = new StringBuilder(this.accessTokenUrl);
 
         accessTokenUrl.append("?appid=").append(this.appId);
-        accessTokenUrl.append("&secret=").append(this.appSecrect);
+        accessTokenUrl.append("&secret=").append(this.appSecret);
         accessTokenUrl.append("&code=").append(authorizationCode);
         accessTokenUrl.append("&grant_type=authorization_code");
 
