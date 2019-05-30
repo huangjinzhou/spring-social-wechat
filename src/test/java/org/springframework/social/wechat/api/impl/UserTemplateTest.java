@@ -16,7 +16,7 @@ public class UserTemplateTest extends AbstractWeChatApiTest {
                 .andExpect(header("Authorization", "Bearer ACCESS_TOKEN"))
                 .andRespond(withSuccess(jsonResource("profile"), MediaType.APPLICATION_JSON));
         WeChatUserProfile profile = weChat.userOperations().getUserProfile("OPENID");
-        assertEquals("OPENID", profile.getOpenid());
+        assertEquals("OPENID", profile.getOpenId());
         assertEquals("NICKNAME", profile.getNickname());
         assertEquals("PROVINCE", profile.getProvince());
         assertEquals("COUNTRY", profile.getCountry());
