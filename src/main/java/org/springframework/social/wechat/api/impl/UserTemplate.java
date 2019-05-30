@@ -23,10 +23,13 @@ public class UserTemplate extends AbstractWeChatOperations implements UserOperat
         this.restTemplate = restTemplate;
     }
 
+
+    public static final String SNS_USER_INFO = "/sns/userinfo";
+
     @Override
     public WeChatUserProfile getUserProfile(String openId) {
         requireAuthorization();
-        return restTemplate.getForObject(buildUri("/sns/userinfo"),
+        return restTemplate.getForObject(buildUri(SNS_USER_INFO),
                 WeChatUserProfile.class, Collections.singletonMap("openid", openId));
     }
 

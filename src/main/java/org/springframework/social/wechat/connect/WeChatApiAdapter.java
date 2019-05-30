@@ -40,9 +40,9 @@ public class WeChatApiAdapter implements ApiAdapter<WeChat> {
         }
 
         values.setDisplayName(userProfile.getNickname());
-        values.setProviderUserId(userProfile.getOpenid());
-        values.setImageUrl(userProfile.getHeadimgurl());
-        values.setProfileUrl(userProfile.getHeadimgurl());
+        values.setProviderUserId(userProfile.getOpenId());
+        values.setImageUrl(userProfile.getHeadImageUrl());
+        values.setProfileUrl(userProfile.getHeadImageUrl());
     }
 
     @Override
@@ -51,7 +51,7 @@ public class WeChatApiAdapter implements ApiAdapter<WeChat> {
 
         return new UserProfileBuilder()
                 .setName(userProfile.getNickname())
-                .setId(userProfile.getOpenid())
+                .setId(userProfile.getOpenId())
                 .setUsername(userProfile.getNickname())
                 .setFirstName(userProfile.getNickname())
                 .build();

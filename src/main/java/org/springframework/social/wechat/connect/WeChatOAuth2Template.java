@@ -101,6 +101,7 @@ public class WeChatOAuth2Template extends OAuth2Template {
     private AccessGrant getAccessToken(StringBuilder accessTokenRequestUrl) {
 
         log.info("获取access_token, 请求URL: {}", accessTokenRequestUrl.toString());
+
         String response = getRestTemplate().getForObject(accessTokenRequestUrl.toString(), String.class);
 
         log.info("获取access_token, 响应内容: " + response);
