@@ -60,7 +60,7 @@ public class MiniProgramSessionManager {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new MiniProgramModule());
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter(objectMapper);
-        converter.setSupportedMediaTypes(Arrays.asList(MediaType.TEXT_XML, new MediaType("application", "*+json")));
+        converter.setSupportedMediaTypes(Arrays.asList(MediaType.TEXT_PLAIN, new MediaType("application", "*+json")));
         this.restTemplate.setMessageConverters(Collections.singletonList(converter));
     }
 }
